@@ -272,22 +272,28 @@ Then add a title and description to your pull request that explains your preciou
 |---|---|
 
 
-![IMG_20210924_141206](https://user-images.githubusercontent.com/84338935/134647505-b7156d08-b926-4bd1-ae07-e11f12925808.jpg)
 
 
 
+![IMG_20210924_140932](https://user-images.githubusercontent.com/84338935/134647836-87cce6b6-a325-404d-bdf9-b57599f14e10.jpg)
 
-![IMG_20210924_141129](https://user-images.githubusercontent.com/84338935/134647675-fd5bff58-dc0f-42e4-8f01-3f86f1ba77d1.jpg)
-
-
+![IMG_20210924_141021](https://user-images.githubusercontent.com/84338935/134647761-3bc29195-32dd-4920-a60b-e08924d59a10.jpg)
 
 ![IMG_20210924_141044](https://user-images.githubusercontent.com/84338935/134647723-bbed0601-7d04-4ef4-b36c-2e451f8cb98e.jpg)
 
 
-![IMG_20210924_141021](https://user-images.githubusercontent.com/84338935/134647761-3bc29195-32dd-4920-a60b-e08924d59a10.jpg)
 
 
-![IMG_20210924_140932](https://user-images.githubusercontent.com/84338935/134647836-87cce6b6-a325-404d-bdf9-b57599f14e10.jpg)
+
+
+
+
+
+
+![IMG_20210924_141206](https://user-images.githubusercontent.com/84338935/134647505-b7156d08-b926-4bd1-ae07-e11f12925808.jpg)
+
+![IMG_20210924_141129](https://user-images.githubusercontent.com/84338935/134647675-fd5bff58-dc0f-42e4-8f01-3f86f1ba77d1.jpg)
+
 
 
 <!--|<h3 align="center">Home Page</h3><img width="200" alt="Home Page" src="https://drive.google.com/file/d/1L1n96VT44BJGh9bBQKP8rtKDJ5pkIIZC/view?usp=sharing">-->
