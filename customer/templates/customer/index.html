@@ -1,0 +1,108 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<style>
+    body{
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        color: black;
+        font-family: 'Russo One', sans-serif;
+        font-size: 2.5rem;
+        text-shadow: 1px 1px grey;
+    }
+    span{
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+    #fade{
+        opacity: 1;
+    }
+    .box{
+        margin-left: 0;
+        border-radius: 30px;
+    }
+    h2{
+        color: aliceblue;
+        font-weight: 500;
+    }
+    .btn{
+        border-radius: 30px;
+    }
+    .blacky{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .no{
+        margin-left: 0;
+    }
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: grey !important;
+    }
+</style>
+
+<div class="container mb-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center no">
+            <h1 class="fancy">Hungry? You are at the right place!</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center box no">
+            <h2>Place an Order!</h2>
+            <a href="{% url 'order' %}" class="btn btn-primary"><strong class="blacky">Order Now!</strong></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const text = document.querySelector('.fancy');
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
+    for(let i=0;i<splitText.length;i++)
+    {
+        text.innerHTML += "<span>"+splitText[i]+"</span>";
+    }
+    let char = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick(){
+        const span = text.querySelectorAll('span')[char];
+        span.setAttribute("id", "fade")
+        char++;
+        if(char === splitText.length)
+        {
+            complete();
+            return ;
+        }
+    }
+
+    function complete(){
+        clearInterval(timer);
+        timer = null;
+    }
+
+    let random = Math.floor(Math.random()*3);
+    if(random == 0)
+    {
+        document.querySelector('body').style.background = "url('../media/bg1.png')";
+        document.querySelector('.changable').style.color = "#ffbf00";
+        document.querySelector('.box').style.backgroundColor = "black";
+    }
+    else if(random == 1)
+    {
+        document.querySelector('body').style.background = "url('../media/bg2.png')";
+        document.querySelector('.changable').style.color = "green";
+        document.querySelector('.box').style.backgroundColor = "black";
+    }
+    else{
+        document.querySelector('body').style.background = "url('../media/bg3.png')";
+        document.querySelector('.changable').style.color = "red";
+        document.querySelector('.box').style.backgroundColor = "black";
+    }
+    //document.querySelector('body').style.backgroundRepeat = "no-repeat";
+    document.querySelector('body').style.backgroundSize = "100%";
+</script>
+{% endblock content %}

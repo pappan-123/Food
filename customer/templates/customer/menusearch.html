@@ -1,0 +1,202 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<style>
+h1{
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px grey;
+}
+body {
+    background: url('../../media/bg-order-2.jpg');
+    background-size: 25%;
+}
+@media (min-width: 1500px){
+    .container{
+        max-width: 1400px;
+    }
+}
+.height {
+    height: 20vh;
+}
+
+.form {
+    position: relative;
+}
+
+.form .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #9ca3af;
+}
+
+.form span {
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+}
+
+.left-pan {
+    padding-left: 7px;
+}
+
+.left-pan i {
+    padding-left: 10px;
+}
+
+.form-input {
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus {
+    box-shadow: none;
+    border: none;
+}
+.btn{
+    border-radius: 30px;
+}
+.card{
+    padding: 5px;
+    margin: 20px;
+    border-radius: 25px;
+}
+img{
+    border-radius: 25px !important;
+}
+.list-group-item{
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+.no:hover{
+    box-sizing: border-box;
+    border-color: red;
+    border-style: solid;
+    border-width: 1.5px;
+}
+.yes:hover{
+    box-sizing: border-box;
+    border-color: rgb(6, 209, 6);
+    border-style: solid;
+    border-width: 1.5px;
+}
+.card-body{
+    display: flex !important;
+    justify-content: space-between;
+}
+.card-title{
+    margin-bottom: 0 !important;
+    font-weight: 600;
+}
+.card-text{
+    font-size: 1.25rem !important;
+}
+.space-box{
+    height: 70px;
+}
+span{
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+#fade{
+    opacity: 1;
+}
+</style>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 col-sm-12 text-center">
+            <h1 class="fancy">What's On Our Menu?</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-6">
+                <form method="GET" action="{% url 'menu-search' %}" class="form">
+                    <i class="fa fa-search"></i>
+                    <input class="form-control form-input" name="q" type="text" placeholder="Search Our Menu" aria-label="Search" value="{{ request.GET.q }}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        {% for item in menu_items %}
+        <div class="card" style="width: 19.25rem;">
+            <img class="card-img-top" src="{{ item.image.url }}" width="350" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">₹ {{ item.price }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ item.description }}</li>
+                <li class="list-group-item">{{item.canteen}}</li>
+                <li class="list-group-item">
+                    {% if item.availability %}
+                    <p style="color: green;" class="availability-box-yes condition"> Available <i class="far fa-check-circle"></i></p>
+                    {% else %}
+                    <p style="color: red;" class="availability-box-no condition"> Currently Not Available <i class="far fa-times-circle"></i></p>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="space-box"></div>
+
+<script>
+   let button = document.querySelector('.menu-order');
+    button.href = "{% url 'order' %}";
+    button.innerHTML = "Order Now!"
+
+    let cardHover = document.querySelectorAll('.condition');
+    let cards =  document.querySelectorAll('.card');
+    for(let i=0;i<cardHover.length;i++)
+    {
+        if(cardHover[i].classList.contains('availability-box-yes'))
+        {
+            cards[i].classList.add("yes");
+        }
+        else if(cardHover[i].classList.contains('availability-box-no'))
+        {
+            cards[i].classList.add("no");
+        }
+    }
+
+    const text = document.querySelector('.fancy');
+    const strText = text.textContent;
+    const splitText = strText.split("");
+    text.textContent = "";
+    for(let i=0;i<splitText.length;i++)
+    {
+        text.innerHTML += "<span>"+splitText[i]+"</span>";
+    }
+    let char = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick(){
+        const span = text.querySelectorAll('span')[char];
+        span.setAttribute("id", "fade")
+        char++;
+        if(char === splitText.length)
+        {
+            complete();
+            return ;
+        }
+    }
+
+    function complete(){
+        clearInterval(timer);
+        timer = null;
+    }
+</script>
+
+{% endblock content %}
