@@ -120,7 +120,7 @@ You can refer to the following articles on the basics of Git and Github and also
 You need to clone (download) it to local machine using
 
 ```sh
-$ git clone https://github.com/pappan-123/Food.git
+$ git clone https://github.com/pappan-123/JU-Eats.git
 ```
 
 > This makes a local copy of repository in your machine.
@@ -150,33 +150,20 @@ Installing Django
 ```sh
  $ python -m pip install Django
 ```
-Run the following commands to see that your local copy has a reference to your forked remote repository in Github :octocat:
+## comment for install dependencies
+<br>
 
- 
-```sh
-$ git remote -v
-origin  https://github.com/Your_Username/JU-Eats.git (fetch)
-origin  https://github.com/Your_Username/JU_Eats.git (push)
-```
-Now, lets add a reference to the original [JU_Eats](https://github.com/pappan-123/Food.git) repository using
+pip install django-allauth <br>
+pip install django-crispy-forms
 
-```sh
-$ git remote add upstream https://github.com/pappan-123/Food.git
-```
-
-> This adds a new remote named ***upstream***.
-
-See the changes using
-
-```sh
-$ git remote -v
-origin    https://github.com/Your_Username/covisite.git (fetch)
-origin    https://github.com/Your_Username/covisite.git (push)
-upstream  https://github.com/arghya1912/covisite.git (fetch)
-upstream https://github.com/arghya1912/covisite.git![covisite](https://user-images.githubusercontent.com/71402528/114308981-4df45f00-9b03-11eb-9928-8028aaf2bd15.jpg)
-/covisite.git (push)
-```
-
+## comment for change Django-Admin Portal
+pip install -U django-jazzmin<br>
+Add 'jazzmin', to INSTALLED_APPS<br>
+INSTALLED_APPS = [
+    'jazzmin',<br>
+    'django.contrib.admin',
+    [...]
+]
 <br>
 
 
