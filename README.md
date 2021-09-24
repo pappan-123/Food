@@ -151,11 +151,17 @@ Installing Django
 ## comment for install dependencies
 <br>
 
+```
 pip install django-allauth <br>
 pip install django-crispy-forms
+```
 
 ## comment for change Django-Admin Portal
+
+```
 pip install -U django-jazzmin<br>
+```
+```
 Add 'jazzmin', to INSTALLED_APPS<br>
 INSTALLED_APPS = [
     'jazzmin',<br>
@@ -163,7 +169,7 @@ INSTALLED_APPS = [
     [...]
 ]
 <br>
-
+```
 
 
 ### 3️⃣ Sync it :recycle:
