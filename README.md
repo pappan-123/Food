@@ -18,8 +18,6 @@
  ## We have deployed our website at [Click here](https://arghyadeepsengupta.pythonanywhere.com/)<br>
  ## Want to clone it in your local machine? Click here ➡ [Steps to follow ](#Stepstofollow)
  
- ## Video Demonstration 
- https://user-images.githubusercontent.com/84338935/125182981-43478400-e230-11eb-9c5d-1bcb564b56e0.mp4
 
  ## Youtube link for the same [Click here](https://youtu.be/hEeJh9MAtz8) <br>
  
